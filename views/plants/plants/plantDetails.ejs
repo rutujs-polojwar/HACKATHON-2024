@@ -1,0 +1,50 @@
+<%- layout("/layouts/boilerplate") %>
+
+<body>
+  <div class="picture">
+    <%  
+    
+    /*labels store the key names that are used in the object of database 
+    to access the individual data of that particular key which is an array */
+    const labels = ['botanicalName', 'commonName','habitatInformation',
+     'medicalUses','cultivationMethod',
+      'advantagesAndProperties','safetyPrecautions','partsUsed',
+      'effectsOnHealth','advantageOfDailyConsumption',
+      'availabilityAndSeason'
+    ] ;
+
+    /*names actually are used to print the headings of small sections*/
+    const names =
+    ['Botanical Name','Common Name' , 'Habitat Information' ,
+    'Medical Uses','Cultivation Method', 'Advantages And Properties',
+    'Safety Precautions','Parts Used','Effects On Health',
+     'Advantage Of Daily Consumption', 'Availability And Season' ] ;
+     
+    // let i = 0 ;
+    // Loop through the
+    //properties of the plant object
+    
+    for(let i = 0 ; i < labels.length ;i++) { 
+      let heading = names[i] ; 
+      if(Plant && Plant[labels[i]] && Array.isArray(Plant[labels[i]]) &&Plant[labels[i]].length > 0) { %>
+        <div class="singlePLantDetail">
+        <h4 style = "text-decoration: underline ;"><i class="fa-solid fa-leaf" style="color : green; margin-right : 5px ;"></i><%= heading %></h4>
+        <ul type = "none">
+        <% let content =  Plant[labels[i]] ; //this content is an array 
+        for(let j =0; j < content.length ; j++  ) { %>
+            <li><%=  content[j]  %></li>
+       <% }%>
+      </ul>
+    </div>
+
+       <% } else { continue ; }%>
+       <% }%>
+      %>
+  </div>
+  <%-include("../../includes/backButton") %>
+
+</body>
+<!-- Properly close the loop -->
+
+
+

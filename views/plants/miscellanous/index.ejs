@@ -1,0 +1,32 @@
+<%-layout("/layouts/boilerplate")%>
+<!--
+ here comes the main body where all the categories
+ for different diseases and ailments comes
+ clicking on individual categroy gives u 
+ a list of plants 
+ clicking those plants will give u the 
+ actual information of the plant 
+  -->
+<body>
+  <!-- this is the intro page that will fade away after 3 seconds or so
+   and then will be removed  -->
+  <div class="intro-page">
+    <i class="fa-solid fa-leaf introLogo"></i>
+  </div>
+
+  <div class="card-container">
+    <% for (singleDisease of allDiseases) {%>
+
+    <a href="/<%= singleDisease.title %>" class="card-link">
+      <div class="card-disease">
+        <img
+          src="<%= singleDisease. diseasePictureLink %>"
+          alt="<%= singleDisease.title %>"
+        />
+        <h1><%= singleDisease.title %></h1>
+      </div>
+    </a>
+    <% }%>
+  </div>
+  <script src="/js/fadeOutPage.js"></script>
+</body>

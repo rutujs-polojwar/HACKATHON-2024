@@ -1,0 +1,38 @@
+<%-layout("/layouts/boilerplate")%>
+<!-- make actual changes to this page 
+ as this is just showing the layout of the content  -->
+<style>
+.settings {
+    display:flex ;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    row-gap : 13px ;
+}
+.settings li {
+    transition : 0.5s ;
+}
+.settings li:hover {
+    font-weight: bold ;
+    font-size : 1.2rem ;
+    cursor: pointer;
+}
+
+.settings li {
+    color : black  !important;
+}
+</style>
+<ul type = "none" class = "settings">
+    <a href="#"><li>Edit profile</li></a>
+    <a href="#"><li>Notifications</li></a>
+    <a href="#"><li>Liked Plants</li></a>
+    <a href="#"><li>consultants</li></a>
+    <a href="#"><li>privacy policy</li></a>
+    <a href="#"><li>feedbacks given </li></a>
+    <a href="#"><li>sharings</li></a>
+    <a href="#"><li>read more</li></a>
+    <a href="#"><li>switch appearance</li></a>
+    <a href="#"><li>Help</li></a>
+</ul>
+
+<%- include("../../includes/backButton") %>

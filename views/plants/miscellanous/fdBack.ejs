@@ -1,0 +1,36 @@
+<%- layout("./layouts/boilerplate") %>
+
+<div class="fdBack-box">
+  <h3 id="fdHead">Enter Your Feedback</h3>
+  <h5>Your feedback helps us to grow and provide you with better resources !</h5>
+
+  <form action="/fdBack" method="post">
+    <textarea name="fdBack" id="fdBack" cols="50" rows="10"> </textarea>
+    <button class="back-button">Submit FeedBack</button>
+  </form>
+</div>
+
+<%- include("../../includes/backButton.ejs") %>
+
+<style>
+  #fdHead {
+    margin-bottom : 50px ;
+    text-decoration: underline;
+  }
+  #fdBack {
+    padding : 10px ;
+    line-height : 1.2rem ;
+  }
+  .fdBack-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .fdBack-box form {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    row-gap: 50px;
+  }
+</style>

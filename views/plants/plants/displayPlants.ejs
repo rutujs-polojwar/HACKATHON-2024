@@ -1,0 +1,17 @@
+<%-layout("/layouts/boilerplate")%>
+
+<body>
+  <h1>For : <%= disease.title %></h1>
+  <hr />
+  <!-- accessing plants as plants is an array  -->
+  <div class="plant-card-container">
+    <% for(plant of plants) {%>
+    <a href="/<%= disease.title %>/<%= plant.commonName[0] %>">
+      <div class="plant-card " role="button">
+        <h4><%= plant.commonName[0]%></h4>
+      </div>
+    </a>
+    <% } %>
+  </div>
+  <%-include("../../includes/backButton.ejs") %>
+</body>

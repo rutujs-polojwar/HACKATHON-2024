@@ -1,0 +1,44 @@
+<%- layout("/layouts/boilerplate") %>
+
+<body>
+  <h1>Search Results :</h1>
+  <!-- if plant's query does not exist then 
+     disease will be searched and displayed  -->
+  <% if(plantResults.length > 0){ %>
+  <h2>Plants</h2>
+  <ul type="none">
+    <% plantResults.forEach( plant=> {%>
+      <a href="/<%= plant.commonName[0] %>">
+        <div class="plant-card " role="button">
+          <h4><%= plant.commonName[0]%></h4>
+        </div>
+      </a>   
+       <%}) %>
+    <% }%> 
+    <!-- checking if diseaseResults array's 
+     length is more than 0 -->
+    <% if(diseaseResults.length>0) { %>
+      <h2>Diseases</h2>
+  <ul type="none">
+    <% diseaseResults.forEach( disease=> {%>
+      <!-- <div class="card-container"> -->
+    <a href="/<%= disease.title %>" class="card-link">
+      <div class="card-disease">
+        <img
+          src="<%= disease. diseasePictureLink %>"
+          alt="<%= disease.title %>"
+        />
+        <h1><%= disease.title %></h1>
+      </div>
+    </a>
+  <!-- </div> -->
+    <%}) ; %>
+  </ul>
+  <% } %>
+<!-- if none of the above conditions are satisified : -->
+  <% if(!plantResults.length && !diseaseResults.length) {%>
+    <p>SEARCH NOT FOUND</p>
+  <% } %>
+  
+  <%-include("../../includes/backButton.ejs") %>
+</body>

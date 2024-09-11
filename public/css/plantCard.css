@@ -1,0 +1,30 @@
+.plant-card-container {
+  display: flex;
+  column-gap: 50px;
+}
+
+.plant-card {
+  background-color: rgb(193, 193, 40);
+  height: 100px;
+  width: 200px;
+  border: 2px solid black;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin-right  : 50px ; */
+  transition : 1s ;
+  color : green !important ;
+}
+
+/* animations over tha plant card */
+.plant-card:hover {
+  transform: scale(1.1);
+  color : black !important ;
+ 
+}
+
+
+
+
+

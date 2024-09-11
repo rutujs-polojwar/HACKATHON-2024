@@ -1,0 +1,10 @@
+<%- layout("/layouts/boilerplate") %>
+<!-- 
+error page for displaing any error if oocurred
+  -->
+<body>
+  <h4>Status Code :</h4>
+  <h1><%= error.status %></h1>
+  <h4>Message :</h4>
+  <h1><%= error.message %></h1>
+</body>
